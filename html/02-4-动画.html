@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动画</title>
+		<script src="../js/jquery-1.12.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var animated = document.getElementById('animated_div');
+				//播放
+				$('#playBtn').on('click', run);
+				//暂停
+				$('#pauseBtn').on('click', function() {
+					animated.style.animationPlayState = 'paused';
+				});
+				//重制
+				$('#replayBtn').on('click', function() {
+					animated.classList.remove('demo');
+					setTimeout(function() {
+					animated.classList.add('demo');
+					run();
+					}, 10);
+				});
+				
+				function run() {
+					animated.style.animationPlayState = 'running';
+				}
+			})
+				
+		</script>
+	<style type="text/css">
+		.wrapper {
+		padding-top: 80px;
+		padding-right: 100px;
+		}
+		#animated_div {
+		width: 76px;
+		height: 47px;
+		background: #92B901;
+		color: #fff;
+		position: relative;
+		font-weight: bold;
+		font-size: 20px;
+		padding: 10px;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		}
+
+		#animated_div span {
+		font-size: 10px;
+		}
+
+		.demo {
+		animation: demo 5s ease 1s infinite;
+		-webkit-animation: demo 5s ease 1s infinite;
+		}
+
+		
+
+		@keyframes demo {
+		0% {
+			transform: rotate(0deg);
+			left: 0px;
+		}
+		25% {
+			transform: rotate(20deg);
+			left: 0px;
+		}
+		50% {
+			transform: rotate(0deg);
+			left: 100%;
+		}
+		55% {
+			transform: rotate(-10deg);
+			left: 100%;
+		}
+		70% {
+			transform: rotate(-20deg);
+			left: 100%;
+			background: #1ec7e6;
+		}
+		100% {
+			transform: rotate(-360deg);
+			left: 0px;
+		}
+		}
+	</style>
+	</head>
+	
+	<div class="wrapper">
+		<div id="animated_div" class="demo">
+		  CSS3<br><span>动画</span>
+		</div>
+	  </div>
+	  <hr>
+	  <div align="center">
+		<button id="playBtn">开始</button>
+		<button id="pauseBtn">暂停</button>
+		<button id="replayBtn">重置</button>
+	  </div>
+</html>

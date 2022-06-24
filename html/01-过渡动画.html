@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>过渡</title>
+		<script src="../js/jquery-1.12.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#bu').click(function(){
+				debugger
+					$('#box').addClass('yidong')
+				})
+				$('#box').click(function(){
+					$('#box').removeClass('yidong')
+				})
+			})
+		</script>
+	<style type="text/css">
+		button{
+			margin: 40px auto;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: pink;
+			transition: all 3s ease;
+		}
+		.yidong{
+			transition: all 3s ease;
+			width: 200px;
+		}
+	</style>
+	</head>
+	
+	<body>
+		<button id="bu">go</button>
+		<div id="box"></div>
+	</body>
+</html>

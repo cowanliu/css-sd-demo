@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动画</title>
+		<link rel="stylesheet" type="text/css" href="../css/jquery.fullPage.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+	</head>
+	<body>
+		
+		<div id="fullpage">
+			<div class="section page1">
+				<div class="info">
+					<p><span>transition</span> <span>过</span><span>渡</span><span>动</span><span>画</span></p>
+				</div>
+				
+			</div>
+			
+			<div class="section page2">
+				<div class="content">
+					
+					<div class="dunpai">
+						<img src="../img/timg (1).jpg" alt="">
+						<img src="../img/timg (2).jpg" alt="">
+						<img src="../img/timg (3).jpg" alt="">
+						<img src="../img/timg (4).jpg" alt="">
+						<img src="../img/timg (5).jpg" alt="">
+						<img src="../img/timg (6).jpg" alt="">
+						<img src="../img/timg (7).jpg" alt="">
+						<img src="../img/timg (8).jpg" alt="">
+						<img src="../img/timg (10).jpg" alt="">
+					</div>	
+	
+				</div>
+			</div>
+			
+			<div class="section page3">
+				<div class="quan">
+					<img src="../img/pic.jpg"/>
+				</div>
+				
+			</div>
+			
+			<!-- <div class="section page4">
+				
+				<div>
+					<img src="../img/timg.jpg"/>
+					<img src="../img/timg (1).jpg"/>
+					<img src="../img/timg (2).jpg"/>
+					<img src="../img/timg (3).jpg"/>
+					<img src="../img/timg (4).jpg"/>
+					<img src="../img/timg (5).jpg"/>
+					<img src="../img/timg (6).jpg"/>
+					<img src="../img/timg (7).jpg"/>
+					<img src="../img/timg (8).jpg"/>
+					<img src="../img/timg (10).jpg"/>
+				</div>
+				
+			</div> -->
+		</div>
+		
+	</body>
+	
+	<script src="../js/jquery-1.12.3.js"></script>	
+	<script src="../js/jquery.fullPage.js"></script>
+
+	<script>	 	
+		//, '#0DA5D6'
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+			   sectionsColor:['#0da5d6','#2AB561', '#DE8910', '#16BA9D'],
+				'navigation':true,
+			   afterLoad: function(anchorLink, index){ 
+
+				   	if(index==1){
+				   		var timer=setTimeout(function(){
+				   			$('.section').eq(index-1).addClass('selected').siblings().removeClass('selected');
+
+				   			clearTimeout(timer);
+
+				   		},50)
+
+				   	}else{
+				   		$('.section').eq(index-1).addClass('selected').siblings().removeClass('selected');
+				   	}
+
+			   }
+			  
+			});
+		});
+
+
+	 </script>
+	 
+	 
+</html>

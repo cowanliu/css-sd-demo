@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>相册</title>
+		<style type="text/css">
+			body,html{
+				height: 100%;
+			}
+			body{
+				background:url(../img/1504764752193.jpg)no-repeat center;
+				background-size: cover;
+			}
+			div{
+				width: 400px;
+				height: 300px;
+				transform-style: preserve-3d;
+				position: fixed;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+				animation: go 30s linear infinite;
+			}
+			div img{
+				width: 400px;
+				height: 300px;
+				position: absolute;
+			}
+			div img:nth-child(1){
+				transform:translatez(700px);
+			}
+			div img:nth-child(2){
+				transform:rotateY(36deg) translatez(700px);
+			}
+			div img:nth-child(3){
+				transform:rotateY(72deg) translatez(700px);
+			}
+			div img:nth-child(4){
+				transform:rotateY(108deg) translatez(700px);
+			}
+			div img:nth-child(5){
+				transform:rotateY(142deg) translatez(700px);
+			}
+			div img:nth-child(6){
+				transform:rotateY(178deg) translatez(700px);
+			}
+			div img:nth-child(7){
+				transform:rotateY(212deg) translatez(700px);
+			}
+			div img:nth-child(8){
+				transform:rotateY(248deg) translatez(700px);
+			}
+			div img:nth-child(9){
+				transform:rotateY(282deg) translatez(700px);
+			}
+			div img:nth-child(10){
+				transform:rotateY(318deg) translatez(700px);
+			}
+			@keyframes go{
+				0%{
+					transform:rotateX(0deg) rotateY(0deg);
+				}
+				25%{
+					transform:rotateX(20deg) rotateY(180deg);
+				}
+				50%{
+					transform:rotateX(0deg) rotateY(360deg);
+				}
+				75%{
+					transform:rotateX(-20deg) rotateY(520deg);
+				}
+				100%{
+					transform:rotateX(0deg) rotateY(720deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				<img src="../img/timg.jpg"/>
+				<img src="../img/timg (1).jpg"/>
+				<img src="../img/timg (2).jpg"/>
+				<img src="../img/timg (3).jpg"/>
+				<img src="../img/timg (4).jpg"/>
+				<img src="../img/timg (5).jpg"/>
+				<img src="../img/timg (6).jpg"/>
+				<img src="../img/timg (7).jpg"/>
+				<img src="../img/timg (8).jpg"/>
+				<img src="../img/timg (10).jpg"/>
+			</div>
+	</body>
+</html>
